@@ -20,4 +20,12 @@ export class LoginPage {
   async goto() {
     await this.page.goto("https://takeprofit.avidi.tech/");
   }
+
+  async login(email = "auto_test_takeprofit@yopmail.com", password = "Qwe123**") {
+    await this.getOpenMenuBtn.click()
+    await this.getLoginBtn.click()
+    await this.getEmailField.fill(email)
+    await this.getPasswordField.fill(password)
+    await this.getUserLoginButton.click()
+  }
 }
